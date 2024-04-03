@@ -6,10 +6,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ authenticate, setAuthenticate }) => {
+const Navbar = () => {
+  let authenticate = useSelector((state) => state.auth.authenticate);
   const navigate = useNavigate();
+
   const menuList = [
     "Women",
     "Men",
@@ -23,7 +26,8 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
 
   const goToLogin = () => {
     navigate("/login");
-    setAuthenticate(false);
+    // setAuthenticate(false);
+    authenticate = false;
   };
 
   const search = (event) => {
