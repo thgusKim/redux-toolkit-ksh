@@ -1,19 +1,23 @@
-function getProducts(searchQuery) {
-  return async (dispatch, getState) => {
-    let url = `https://my-json-server.typicode.com/thgusKim/hnm-prac/products?q=${searchQuery}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    dispatch({ type: "GET_PRODUCT_SUCCESS", payload: { data } });
-  };
-}
+// function getProducts(searchQuery) {
+//   return async (dispatch, getState) => {
+//     let url = `https://my-json-server.typicode.com/thgusKim/hnm-prac/products?q=${searchQuery}`;
+//     let response = await fetch(url);
+//     let data = await response.json();
+//     // dispatch({ type: "GET_PRODUCT_SUCCESS", payload: { data } });
+//     dispatch(productActions.getAllProducts({ data }));
+//   };
+// }
 
-function getProductDetail(id) {
-  return async (dispatch, getState) => {
-    let url = `https://my-json-server.typicode.com/thgusKim/hnm-prac/products/${id}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    dispatch({ type: "GET_DETAIL_SUCCESS", payload: { data } });
-  };
-}
+// import { productActions } from "../reducers/productReducer";
 
-export const productAction = { getProducts, getProductDetail };
+// function getProductDetail(id) {
+//   return async (dispatch, getState) => {
+//     let url = `https://my-json-server.typicode.com/thgusKim/hnm-prac/products/${id}`;
+//     let response = await fetch(url);
+//     let data = await response.json();
+//     // dispatch({ type: "GET_DETAIL_SUCCESS", payload: { data } });
+//     dispatch(productActions.getSingleProduct({ data }));
+//   };
+// }
+
+// export const productAction = { getProductDetail };
